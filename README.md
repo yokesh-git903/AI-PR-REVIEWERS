@@ -1,10 +1,10 @@
-# 🤖 AI Code Review Bot
+ 🤖 AI Code Review Bot
 
 A GitHub bot that automatically reviews Pull Requests using Claude AI.
 When a PR is opened or updated, the bot fetches the diff, sends it to
 Claude, and posts a structured code review as a comment on the PR.
 
-## 🧱 Tech Stack
+ 🧱 Tech Stack
 - **Backend:** Python (FastAPI)
 - **AI:** Claude (Anthropic API)
 - **Integration:** GitHub REST API + Webhooks
@@ -12,7 +12,7 @@ Claude, and posts a structured code review as a comment on the PR.
 
 ---
 
-## 📁 Project Structure
+ 📁 Project Structure
 ```
 ai-pr-reviewer/
 ├── app/
@@ -28,7 +28,7 @@ ai-pr-reviewer/
 
 ---
 
-## 🚀 Step 1: Run it locally first
+🚀 Step 1: Run it locally first
 
 ```bash
 git clone <your-repo-url>
@@ -47,23 +47,23 @@ Visit `http://localhost:8000` — you should see:
 
 ---
 
-## 🔑 Step 2: Get your keys
+🔑 Step 2: Get your keys
 
-### GitHub Token
+GitHub Token
 1. GitHub → Settings → Developer settings → **Personal access tokens** → Tokens (classic)
 2. Generate new token → check the **repo** scope
 3. Copy it into `.env` as `GITHUB_TOKEN`
 
-### Anthropic API Key
+ Anthropic API Key
 1. Go to console.anthropic.com → API Keys → Create Key
 2. Copy it into `.env` as `ANTHROPIC_API_KEY`
 
-### Webhook Secret
+Webhook Secret
 Just make up any random string, e.g. `mysecret123`, put it in `.env` as `GITHUB_WEBHOOK_SECRET` — you'll use the same value in Step 4.
 
 ---
 
-## ☁️ Step 3: Deploy to Render (free, ~5 mins)
+ ☁️ Step 3: Deploy to Render (free, ~5 mins)
 
 1. Push this project to a GitHub repo.
 2. Go to **render.com** → sign in with GitHub → **New +** → **Web Service**
@@ -82,7 +82,7 @@ This is your **live shareable link** for the resume/HR round ✅
 
 ---
 
-## 🔗 Step 4: Connect the webhook to your GitHub repo
+🔗 Step 4: Connect the webhook to your GitHub repo
 
 1. Go to the repo you want the bot to review PRs on
 2. **Settings → Webhooks → Add webhook**
@@ -95,24 +95,24 @@ This is your **live shareable link** for the resume/HR round ✅
 
 ---
 
-## 🧪 Step 5: Test it
+ 🧪 Step 5: Test it
 
 1. Create a new branch, change some code, open a Pull Request against `main`
 2. Within a few seconds, the bot will comment on the PR with a review like:
 
 ```
-## 🤖 AI Code Review
+ 🤖 AI Code Review
 
-### ✅ What's good
+ ✅ What's good
 - Clear function naming...
 
-### ⚠️ Issues found
+⚠️ Issues found
 - Missing null check on line 12...
 
-### 💡 Suggestions
+💡 Suggestions
 - Consider using a list comprehension...
 
-### 🐛 Potential bugs
+ 🐛 Potential bugs
 - None found
 ```
 
