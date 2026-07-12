@@ -28,7 +28,7 @@ this exact markdown format:
 Be concise, specific, and constructive. Do not repeat the whole diff back."""
 
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+     model_name="gemini-flash-latest",
     system_instruction=SYSTEM_PROMPT,
 )
 
