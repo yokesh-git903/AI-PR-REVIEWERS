@@ -118,10 +118,4 @@ This is your **live shareable link** for the resume/HR round ✅
 
 ---
 
-## 🎤 How to explain this in your interview
 
-- **Problem it solves:** Manual code review is slow; this automates first-pass review so reviewers focus on logic/architecture instead of style/basic bugs.
-- **How it works:** GitHub webhook → FastAPI receives PR event → fetches diff via GitHub REST API → sends diff to Claude with a structured system prompt → posts review back as a PR comment via GitHub API.
-- **Why FastAPI:** async support, automatic docs, lightweight for a webhook receiver.
-- **Security:** HMAC-SHA256 signature verification on every webhook payload so only real GitHub events are processed.
-- **Possible extensions:** inline comments per file/line (using the `files` endpoint), auto-approve/request-changes based on severity, Slack notification integration.
